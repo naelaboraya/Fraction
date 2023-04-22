@@ -17,6 +17,7 @@ class Fraction {
 	
 	public :
 	//constructors:
+	Fraction ();//default
 	Fraction (int numerator , int denominator);
 	Fraction (const Fraction& other);
 	
@@ -30,57 +31,49 @@ class Fraction {
 		return this->_denominator;
 	}
 
+	//setters:
+	void setNumerator(int numerator){
+		this->_numerator = numerator;
+	}
+
+	void setDenominator(int denominator){
+		if(denominator == 0){//checking if the denominator is valid (!= 0) first
+			throw std::invalid_argument("denominator cant be zero !!");
+		}
+		this->_denominator = denominator;
+	}
+
 	//functions:
 	friend Fraction operator+ (const Fraction& frac1 , const Fraction& frac2);
-	friend Fraction operator+ (const Fraction& frac , const int& num);
-	friend Fraction operator+ (const  int& num , Fraction& frac);
 	friend Fraction operator+ (const Fraction& frac , const float& num);
 	friend Fraction operator+ (const  float& num , Fraction& frac);
 	friend Fraction operator- (const Fraction& frac1 , const Fraction& frac2);
-	friend Fraction operator- (const Fraction& frac , const int& num);
-	friend Fraction operator- (const  int& num , Fraction& frac);
 	friend Fraction operator- (const Fraction& frac , const float& num);
 	friend Fraction operator- (const  float& num , Fraction& frac);
 	friend Fraction operator* (const Fraction& frac1 , const Fraction& frac2);
-	friend Fraction operator* (const Fraction& frac , const int& num);
-	friend Fraction operator* (const  int& num , Fraction& frac);
 	friend Fraction operator* (const Fraction& frac , const float& num);
 	friend Fraction operator* (const  float& num , Fraction& frac);
 	friend Fraction operator/ (const Fraction& frac1 , const Fraction& frac2);
-	friend Fraction operator/(const Fraction& frac, int num);
-	friend Fraction operator/(int num , const Fraction& frac);
 	friend Fraction operator/(const Fraction& frac, float num);
 	friend Fraction operator/(float num , const Fraction& frac);  
 	friend bool operator== (const Fraction& frac1 , const Fraction& frac2);
-	friend bool operator== (const Fraction& frac, int num);
-	friend bool operator== (int num, const Fraction& frac);
-	friend bool operator== (const Fraction& frac, double num);
-	friend bool operator== (double num, const Fraction& frac);
+	friend bool operator== (const Fraction& frac, float num);
+	friend bool operator== (float num, const Fraction& frac);
 	friend bool operator!= (const Fraction& frac1 , const Fraction& frac2);
-	friend bool operator!= (const Fraction& frac, int num);
-	friend bool operator!= (int num, const Fraction& frac);
-	friend bool operator!= (const Fraction& frac, double num);
-	friend bool operator!= (double num, const Fraction& frac);
+	friend bool operator!= (const Fraction& frac, float num);
+	friend bool operator!= (float num, const Fraction& frac);
 	friend bool operator>(const Fraction& frac1, const Fraction& frac2);
-	friend bool operator>(const Fraction& frac, int num);
-	friend bool operator>(int num, const Fraction& frac);
-	friend bool operator>(const Fraction& frac, double num);
-	friend bool operator>(double num, const Fraction& frac);
+	friend bool operator>(const Fraction& frac, float num);
+	friend bool operator>(float num, const Fraction& frac);
    	friend bool operator<(const Fraction& frac1, const Fraction& frac2);
-	friend bool operator<(const Fraction& frac, int num);
-	friend bool operator<(int num, const Fraction& frac);
-	friend bool operator<(const Fraction& frac, double num);
-	friend bool operator<(double num, const Fraction& frac);
+	friend bool operator<(const Fraction& frac, float num);
+	friend bool operator<(float num, const Fraction& frac);
    	friend bool operator>=(const Fraction& frac1, const Fraction& frac2);
-	friend bool operator>=(const Fraction& frac, int num);
-	friend bool operator>=(int num, const Fraction& frac);
-	friend bool operator>=(const Fraction& frac, double num);
-	friend bool operator>=(double num, const Fraction& frac);
+	friend bool operator>=(const Fraction& frac, float num);
+	friend bool operator>=(float num, const Fraction& frac);
    	friend bool operator<=(const Fraction& frac1, const Fraction& frac2);
-	friend bool operator<=(const Fraction& frac, int num);
-	friend bool operator<=(int num, const Fraction& frac);
-	friend bool operator<=(const Fraction& frac, double num);
-	friend bool operator<=(double num, const Fraction& frac);
+	friend bool operator<=(const Fraction& frac, float num);
+	friend bool operator<=(float num, const Fraction& frac);
    	friend Fraction& operator++(Fraction& frac);
    	friend Fraction operator++(Fraction& frac , int dummy_flag_for_postfix_increment);
    	friend Fraction& operator--(Fraction& frac);

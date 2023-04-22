@@ -306,6 +306,8 @@ std::istream& operator>> (std::istream& input , Fraction& frac){//modifies the o
 }
 
 
+
+
 //------------------------toString----------------------------------
 
 /*A toString function that describes the fracton*/

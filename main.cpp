@@ -182,7 +182,7 @@ int main() {
      //-------------------->,<,>=,<=----------------------------
      Fraction f32 (3,4);
      Fraction f33 (2,3);
-     cout << (f32 > 32) << endl;//should be true
+     cout << (f32 > f33) << endl;//should be true
      cout << (f32 > 0) << endl;   
      cout << (1 > f32) << endl;
      cout << (f32 > (float)0.75) << endl;//should be false 

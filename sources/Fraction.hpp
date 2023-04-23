@@ -20,14 +20,15 @@ class Fraction {
 	Fraction ();//default
 	Fraction (int numerator , int denominator);
 	Fraction (const Fraction& other);
+
 	
 
 	//getters:
-	int getNumerator(){
+	int getNumerator() const{
 		return this->_numerator;
 	}
 
-	int getDenominator(){
+	int getDenominator() const{
 		return this->_denominator;
 	}
 
@@ -42,6 +43,8 @@ class Fraction {
 		}
 		this->_denominator = denominator;
 	}
+
+	
 
 	//functions:
 	friend Fraction operator+ (const Fraction& frac1 , const Fraction& frac2);

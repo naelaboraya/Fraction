@@ -4,6 +4,36 @@
 using namespace std;
 
 
+TEST_CASE("Default constructor") {//should initialize fraction as 0/1
+    Fraction f;
+    CHECK(f.getNumerator() == 0);
+    CHECK(f.getDenominator() == 1);
+}
+
+TEST_CASE("Normal Constructor") {
+    Fraction f1(3, 4);
+    CHECK(f1.getNumerator() == 3);
+    CHECK(f1.getDenominator() == 4);
+
+    Fraction f2(-5, 2);
+    CHECK(f2.getNumerator() == -5);
+    CHECK(f2.getDenominator() == 2);
+
+    CHECK_THROWS_AS(Fraction(1, 0), std::invalid_argument);
+}
+
+TEST_CASE("Copy constructor") {//should copy the same valeus
+    Fraction f1(2, 3);
+    Fraction f2(f1);
+    CHECK(f1.getNumerator() == f2.getNumerator());
+    CHECK(f1.getDenominator() == f2.getDenominator());
+
+    Fraction f3(4, 5);
+    Fraction f4(f3);
+    CHECK(f3.getNumerator() == f4.getNumerator());
+    CHECK(f3.getDenominator() == f4.getDenominator());
+}
+
 TEST_CASE("Addition"){
     //checks if '+' works and gives the most reduces form  
 
